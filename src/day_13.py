@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from congruents import CongruentSystem, CongruentExpression
+from congruence import CongruentSystem, CongruentExpression
 from utils import read_lines
 
 
@@ -24,7 +24,7 @@ def parse_input(lines: List[str]) -> ParsedInput:
     return dep
 
 
-def day_xx_part01(x: ParsedInput) -> int:
+def day_13_part01(x: ParsedInput) -> int:
     min_depart: int = (x.my_departure // x.timestamps[0]) * x.timestamps[0] + x.timestamps[0]
     driver_id: int = x.timestamps[0]
     for timestamp in x.timestamps:
@@ -39,7 +39,7 @@ def day_xx_part01(x: ParsedInput) -> int:
     return (min_depart - x.my_departure) * driver_id
 
 
-def day_xx_part02(x: ParsedInput) -> int:
+def day_13_part02(x: ParsedInput) -> int:
     system: CongruentSystem = CongruentSystem()
     for i, timestamp in enumerate(x.timestamps):
         if timestamp is not None:
@@ -49,5 +49,5 @@ def day_xx_part02(x: ParsedInput) -> int:
 
 if __name__ == "__main__":
     parsed_input: ParsedInput = parse_input(read_lines())
-    print(day_xx_part01(parsed_input))
-    print(day_xx_part02(parsed_input))
+    print(day_13_part01(parsed_input))
+    print(day_13_part02(parsed_input))
