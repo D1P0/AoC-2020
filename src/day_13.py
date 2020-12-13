@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from Congruents import CongruentSystem, CongruentExpression
+from congruents import CongruentSystem, CongruentExpression
 from utils import read_lines
 
 
